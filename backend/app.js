@@ -1,11 +1,9 @@
 require('dotenv').config();
 const { MongoClient, ServerApiVersion } = require('mongodb');
-const uri = "mongodb+srv://testuser:testpassword1@cluster0.cyv3blj.mongodb.net/?retryWrites=true&w=majority";
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
 const dbConnectionString = process.env.DB_CONNECTION_STRING
-console.log(uri)
 console.log(dbConnectionString)
-const client = new MongoClient(uri, {
+const client = new MongoClient(dbConnectionString, {
   serverApi: {
     version: ServerApiVersion.v1,
     strict: true,

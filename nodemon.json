@@ -1,0 +1,5 @@
+{
+  "env": {
+    "DB_CONNECTION_STRING": "mongodb+srv://testuser:testpassword1@cluster0.cyv3blj.mongodb.net/?retryWrites=true&w=majority"
+  }
+}
