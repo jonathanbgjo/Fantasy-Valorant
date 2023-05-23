@@ -1,4 +1,9 @@
+
 require('dotenv').config();
+const express = require('express');
+const dataRoutes = require('./routes/routes');
+
+const app = express();
 const { MongoClient, ServerApiVersion } = require('mongodb');
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
 const dbConnectionString = process.env.DB_CONNECTION_STRING
@@ -23,3 +28,14 @@ async function run() {
   }
 }
 run().catch(console.dir);
+
+
+// Register the dataRoutes
+app.use(dataRoutes);
+
+// ... Other middleware and server configuration
+
+// Start the server
+app.listen(3000, () => {
+  console.log('Server is running on port 3000');
+});
