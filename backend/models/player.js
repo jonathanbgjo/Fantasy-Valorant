@@ -6,7 +6,8 @@ const playerSchema = new mongoose.Schema({
   role: String,
   points: Number,
   projectedPoints: Number,
-  team: ObjectId,
+  team: {type: mongoose.Schema.Types.ObjectId,
+    ref: 'Team',},
 });
 
 // Create the model

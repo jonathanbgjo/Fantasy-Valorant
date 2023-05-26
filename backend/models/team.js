@@ -3,10 +3,12 @@ const mongoose = require('mongoose');
 // Define the schema
 const teamSchema = new mongoose.Schema({
   name: String,
-  user: ObjectId,
+  user: {type: mongoose.Schema.Types.ObjectId,
+    ref: 'User',},
   players: Array,
   points: Number,
   projectedPoints: Number,
+  wins: Number,
 });
 
 // Create the model
