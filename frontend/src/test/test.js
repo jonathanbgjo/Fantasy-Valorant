@@ -10,7 +10,8 @@ const MyComponent = () => {
       .catch((error) => console.error(error));
   }, []);
 
-  return (
+  return 
+  (
     <div>
       {/* Display the fetched data */}
       {data ? data.map((item) => (
